@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | AgentHub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { darkMode: 'class' }</script>
+  <script>
+    if (localStorage.getItem('agenthub-theme') === 'dark') document.documentElement.classList.add('dark');
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100">
+  <aside class="fixed inset-y-0 left-0 z-30 w-64 border-r border-gray-200 bg-gray-100 dark:border-gray-700 dark:bg-gray-900">
+    <div class="flex h-16 items-center border-b border-gray-200 px-6 dark:border-gray-700">
+      <a href="index.html" class="flex items-center gap-3 text-lg font-bold text-gray-950 dark:text-white">
+        <span class="flex h-8 w-8 items-center justify-center rounded-md bg-gray-900 text-sm text-white dark:bg-white dark:text-gray-900">AH</span>
+        <span>AgentHub</span>
+      </a>
+    </div>
+    <nav aria-label="Navegación principal" class="space-y-1 p-4">
+      <a data-nav-link href="index.html" class="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm text-gray-600 hover:bg-gray-200 hover:text-gray-950 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">
+        <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75h6.5v6.5h-6.5v-6.5Zm10 0h6.5v6.5h-6.5v-6.5Zm-10 10h6.5v6.5h-6.5v-6.5Zm10 0h6.5v6.5h-6.5v-6.5Z"/></svg>
+        Dashboard
+      </a>
+      <a data-nav-link href="usuarios.html" class="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm text-gray-600 hover:bg-gray-200 hover:text-gray-950 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">
+        <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6.75a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.5 20.25a7.5 7.5 0 0 1 15 0"/></svg>
+        Usuarios
+      </a>
+      <a data-nav-link href="agentes.html" class="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm text-gray-600 hover:bg-gray-200 hover:text-gray-950 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">
+        <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3.75h6M12 3.75v-1.5M5.25 9A3.75 3.75 0 0 1 9 5.25h6A3.75 3.75 0 0 1 18.75 9v7.5A3.75 3.75 0 0 1 15 20.25H9a3.75 3.75 0 0 1-3.75-3.75V9Zm3 3h.008v.008H8.25V12Zm7.5 0h.008v.008h-.008V12ZM9 16.5h6"/></svg>
+        Agentes
+      </a>
+      <a data-nav-link href="skills.html" class="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm text-gray-600 hover:bg-gray-200 hover:text-gray-950 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">
+        <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m12 2.75 2.1 5.15 5.15 2.1-5.15 2.1L12 17.25l-2.1-5.15L4.75 10 9.9 7.9 12 2.75Zm6.25 12.5.8 1.95 1.95.8-1.95.8-.8 1.95-.8-1.95-1.95-.8 1.95-.8.8-1.95Z"/></svg>
+        Skills
+      </a>
+      <a data-nav-link href="contrataciones.html" class="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm text-gray-600 hover:bg-gray-200 hover:text-gray-950 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">
+        <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 6.75V5.25A2.25 2.25 0 0 1 10.5 3h3A2.25 2.25 0 0 1 15.75 5.25v1.5m-12 3h16.5m-15-3h13.5A1.5 1.5 0 0 1 20.25 8.25v10.5a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5ZM9.75 12h4.5"/></svg>
+        Contrataciones
+      </a>
+      <a data-nav-link href="errores.html" class="flex items-center gap-3 rounded-md px-3 py-2.5 text-sm text-gray-600 hover:bg-gray-200 hover:text-gray-950 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white">
+        <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.3 3.6 2.65 17.1a2.1 2.1 0 0 0 1.83 3.15h15.04a2.1 2.1 0 0 0 1.83-3.15L13.7 3.6a1.95 1.95 0 0 0-3.4 0ZM12 8.25v4.5m0 3.5v.01"/></svg>
+        Log de errores
+      </a>
+    </nav>
+  </aside>
+  <header class="fixed left-64 right-0 top-0 z-20 flex h-16 items-center justify-between border-b border-gray-200 bg-gray-100 px-6 dark:border-gray-700 dark:bg-gray-800">
+    <p class="shrink-0 text-sm font-medium text-gray-600 dark:text-gray-300">Consola / Operaciones</p>
+    <div class="ml-6 flex min-w-0 flex-1 items-center justify-end gap-4">
+      <label class="relative hidden w-full max-w-md lg:block">
+        <span class="sr-only">Buscar</span>
+        <svg class="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path stroke-linecap="round" d="m16.25 16.25 4 4"/></svg>
+        <input disabled type="search" placeholder="Buscar agente, cliente o contrato..." class="h-9 w-full rounded-md border border-gray-300 bg-white pl-9 pr-3 text-sm text-gray-500 placeholder:text-gray-400 disabled:cursor-not-allowed dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300">
+      </label>
+      <button id="theme-toggle" type="button" class="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-gray-300 text-gray-600 hover:bg-gray-200 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700" aria-label="Activar modo oscuro" aria-pressed="false">
+        <svg data-theme-icon="moon" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 15.1A8.5 8.5 0 0 1 8.9 3.75a8.5 8.5 0 1 0 11.35 11.35Z"/></svg>
+        <svg data-theme-icon="sun" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="12" cy="12" r="3.75"/><path stroke-linecap="round" d="M12 2.25v2m0 15.5v2m9.75-9.75h-2M4.25 12h-2m16.64-6.89-1.42 1.42M6.53 17.47l-1.42 1.42m13.78 0-1.42-1.42M6.53 6.53 5.11 5.11"/></svg>
+      </button>
+      <div class="min-w-0 border-l border-gray-300 pl-4 dark:border-gray-600">
+        <p class="truncate text-sm font-semibold text-gray-900 dark:text-white">Admin Operaciones</p>
+        <p class="truncate text-xs text-gray-500 dark:text-gray-400">Superadmin</p>
+      </div>
+    </div>
+  </header>
+  <main id="main-content" class="ml-64 mt-16 h-[calc(100vh-4rem)] overflow-y-auto p-8">
+    <div class="mx-auto max-w-7xl space-y-6">
+      <section aria-labelledby="dashboard-title">
+        <h1 id="dashboard-title" class="text-2xl font-bold text-gray-950 dark:text-white">Dashboard</h1>
+        <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Resumen operativo y financiero de AgentHub.</p>
+      </section>
+
+      <section aria-labelledby="metricas-title">
+        <h2 id="metricas-title" class="sr-only">Métricas principales</h2>
+        <div id="dashboard-metrics" class="grid grid-cols-1 gap-4 xl:grid-cols-2"></div>
+      </section>
+
+      <section aria-label="Actividad semanal">
+        <div class="flex min-h-[250px] w-full flex-col items-center justify-center rounded-xl border border-dashed border-gray-300 bg-gray-50 px-6 text-center dark:border-gray-600 dark:bg-gray-800">
+          <svg class="h-10 w-10 text-gray-400 dark:text-gray-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5v-6h3v6h-3Zm6-10.5h3v10.5h-3V9Zm6-4.5h3v15h-3v-15ZM3 19.5h18"/>
+          </svg>
+          <p class="mt-3 text-sm font-medium text-gray-500 dark:text-gray-400">Gráfico de actividad semanal (próximamente)</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="resumen-title">
+        <h2 id="resumen-title" class="sr-only">Resumen operativo</h2>
+        <div id="dashboard-widgets" class="grid grid-cols-1 gap-6 xl:grid-cols-2"></div>
+      </section>
+    </div>
+  </main>
+  <script src="js/data.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
